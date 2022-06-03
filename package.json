@@ -1,0 +1,23 @@
+{
+  "name": "intro-to-tdd",
+  "version": "1.0.0",
+  "description": "my code along repo to this freeCodeCamp article on TDD https://www.freecodecamp.org/news/an-introduction-to-test-driven-development-c4de6dce5c/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandyh101/intro-to-TDD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mandyh101/intro-to-TDD/issues"
+  },
+  "homepage": "https://github.com/mandyh101/intro-to-TDD#readme",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
