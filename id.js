@@ -1,7 +1,12 @@
 
 //first test code
+// function getNewId(){
+//   return Math.random()
+// }
+
+//! SECOND TEST CODE
 function getNewId(){
-  return Math.random()
+  return Math.floor(Math.random());
 }
 
 
