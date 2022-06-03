@@ -16,18 +16,24 @@ describe ('Set up tests', () => {  //describe will break your test results into 
 //--> then we EXPECT that ID to be our mocked return value
 
 // 2. The number is an integer.
+//--> compare the ID we get back with it's integer version
 // 3. The number created is within a specified range.
 // 4. The number is unique.
 
 describe ('create a unique ID number', () => {
   test('creates a random number', () => {
+    const originalMath = Object.create(global.Math); //copy  global math object
     const mockMath = Object.create(global.Math); //copy  global math object
     mockMath.random = jest.fn(() => 0.75); //change the random method to return a constant value that we can expect. jest.fn() is a built in mocking function
     global.Math = mockMath;
     const id = getNewId(); //this is the function we'll create when we write the code
     expect(id).toBe(0.75)
+    global.Math = originalMath;
   })
-  test.todo('checks the number is an integer')
+  test('OPTION1: checks the number returned is an integer', () => {
+      const id = getNewId();
+      expect(id).toBe(Math.floor(id))
+  })
   test.todo('checks the number created is within a specific range')
   test.todo('checks the number is unique')
 })
