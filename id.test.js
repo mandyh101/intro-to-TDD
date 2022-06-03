@@ -30,7 +30,7 @@ describe ('create a unique ID number', () => {
     expect(id).toBe(0.75)
     global.Math = originalMath;
   })
-  test('OPTION1: checks the number returned is an integer', () => {
+  test('checks the number returned is an integer', () => {
       const id = getNewId();
       expect(id).toBe(Math.floor(id))
   })
