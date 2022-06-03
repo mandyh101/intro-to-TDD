@@ -21,18 +21,16 @@ describe ('Set up tests', () => {  //describe will break your test results into 
 // 4. The number is unique.
 
 describe ('create a unique ID number', () => {
-  test('creates a random number', () => {
+  test('returns a random number', () => {
+    jest.spyOn(Math, 'floor'); //built in function to check if Math.floor gets called
     const originalMath = Object.create(global.Math); //copy  global math object
     const mockMath = Object.create(global.Math); //copy  global math object
     mockMath.random = jest.fn(() => 0.75); //change the random method to return a constant value that we can expect. jest.fn() is a built in mocking function
     global.Math = mockMath;
     const id = getNewId(); //this is the function we'll create when we write the code
-    expect(id).toBe(0.75)
+    getNewId() //call function without assigning its return value to a variable to aasset it calls some function with some argument
+    expect(Math.floor).toHaveBeenCalledWith(0.75);//asseting that a function is called
     global.Math = originalMath;
-  })
-  test('checks the number returned is an integer', () => {
-      const id = getNewId();
-      expect(id).toBe(Math.floor(id))
   })
   test.todo('checks the number created is within a specific range')
   test.todo('checks the number is unique')
